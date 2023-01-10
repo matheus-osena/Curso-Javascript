@@ -1,24 +1,19 @@
-const dataMostrar = function () {
+const contexto = document.querySelector(".contexto");
+const elementos = [
+    {tag: "p", texto:"Frase 1"},
+    {tag: "div", texto:"Frase 2"},
+    {tag: "footer", texto:"Frase 3"},
+    {tag: "section", texto:"Frase 4"},
+];
 
-    const dataHoje = new Date();
-    const mostrarData = document.querySelector(".data");
+let conteudo = '';
 
-    
-    const dia = dataHoje.getDate();
-    const mes = dataHoje.getMonth();
-    const ano = dataHoje.getFullYear();
-    const horas = dataHoje.getHours();
-    const minutos = dataHoje.getMinutes();
-    const segundos = dataHoje.getSeconds();
-
-
-
-
-    mostrarData.innerHTML = `${dia}/${mes+1}/${ano} ${horas}:${minutos}:${segundos}`
-    console.log(`${dia}/${mes}/${ano} ${horas}:${minutos}:${segundos}`)
+for (i = 0; i < elementos.length;i++){
+    var {tag,texto} = elementos[i] 
+    conteudo = conteudo + `<${tag}>${texto}</${tag}>`
 }
 
-dataMostrar();
+contexto.innerHTML = conteudo;
 
 
 
